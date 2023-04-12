@@ -159,7 +159,7 @@ function App() {
         <h2 className='text-6xl text-black font-barlow'>Galeria</h2>
       </div>
       <div className='flex justify-center'>
-        <div className="App p-10 md:image-gallery md:gap-5">
+        <div className="App p-10 image-gallery gap-5">
           {
             products.map((product,key) => {
               return (
