@@ -1,0 +1,79 @@
+
+.p-inputnumber{
+  background-color: #888;
+}
+
+.btnShop:hover{
+  background-color: #A855F7 !important;
+  color: #FFFFFF !important;
+}
+
+.p-card-title{
+  font-size: 1.5rem;
+  font-family: 'Indie Flower',sans-serif;
+}
+
+.image-gallery{
+  display:grid;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+}
+
+.image-gallery .card:nth-child(7n+1){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.header{
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: 0.3s ease-in;
+  border-color: rgb(249 115 22);
+}
+
+.header.active{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgb(23 23 23);
+  border-bottom-width: 2px;
+  border-color: rgb(249 115 22);
+}
+
+.header.active .text-logo{
+  color: rgb(249 115 22);;
+}
+
+#svgLoader{
+  height: 150px;
+  width: 150px;
+  --tw-text-opacity: 1;
+  stroke: rgb(249 115 22 / var(--tw-text-opacity));
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke-dasharray: 4500;
+  animation: draw 8s ease;
+}
+
+@keyframes draw {
+  0%{
+    stroke-dashoffset: 4500;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+#svgFooter{
+ height: 100px;
+ width: 100px;
+ stroke: #FFFFFF;
+ fill-opacity: 0;
+ stroke-width: 5px;
+}
