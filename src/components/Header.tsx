@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-export function NavBar() {
-    return (
-        <div className="navbar bg-white sticky top-0 left-0 z-10">
+function Header() {
+  return (
+    <div className="navbar bg-white sticky top-0 left-0 z-10">
             <div className="flex-1">
                 <Link to='/'><p className="btn btn-ghost normal-case text-xl text-orange-400 hover:text-cyan-400 tracking-[.5em]">MOCHI</p></Link>
             </div>
@@ -45,4 +44,4 @@ export function NavBar() {
     )
 }
 
-export default NavBar
+export default Header
