@@ -14,7 +14,7 @@ import LoadingLogo from './assets/LoadingLogo.png'
 
 import { Divider } from 'primereact/divider';
 import Loading from './components/Loading';
-import NavBar from './components/NavBar';
+import { NavBar } from './components/NavBar';
 import Footer from './components/Footer';
 import Carousel from './components/Carousel/Carousel';
 import HomeSection from './components/HomeSection';

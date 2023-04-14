@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function NavBar() {
+export function NavBar() {
     return (
         <div className="navbar bg-white sticky top-0 left-0 z-10">
             <div className="flex-1">
