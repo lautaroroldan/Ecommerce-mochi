@@ -1,43 +1,48 @@
-import 'primeicons/primeicons.css';
-import {useState} from 'react'
-import { PrimeIcons } from 'primereact/api';
-function Navbar({imgURL,captions}:any) {
-    const [header,setHeader] = useState(false)
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-    function changeBackground(){
-        if(window.scrollY >= 80){
-            setHeader(true)
-        }else{
-            setHeader(false)
-        }
-    }
-
-    window.addEventListener('scroll',changeBackground)
-  return (
-    <header className={header ? 'header active' : 'header'}>
-        <div 
-        className='w-full flex items-center justify-between pt-2 pb-2  pl-4 pr-4'>
-            <div className='flex items-center gap-4'>
-                <div className='ml-16'>
-                    <h2 className="font-merienda text-4xl text-logo">Mochi</h2>
-                </div>
-                {/* <img src={imgURL} className="w-12 border-2 rounded-full border-teal-500" /> */}
+function NavBar() {
+    return (
+        <div className="navbar bg-white sticky top-0 left-0 z-10">
+            <div className="flex-1">
+                <Link to='/'><p className="btn btn-ghost normal-case text-xl text-orange-400 hover:text-cyan-400 tracking-[.5em]">MOCHI</p></Link>
             </div>
-            
-            <ul className='flex w-56 justify-between mr-4'>
-                {
-                    captions.map((caption:any,index:any) => {
-                        return (
-                                <li key={index}><a href={caption.link} className='text-white font-indieflower text-xl hover:text-teal-500' >{caption.title}</a></li>
-                        )
-                    })
-                }
-                <li className=''><a className='text-white font-indieflower text-xl hover:text-teal-500' href='#'><i className='pi pi-shopping-cart '></i></a></li>
-            </ul>
-            
+            <div className="flex-none">
+                <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle">
+                        <div className="indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            <span className="badge badge-sm indicator-item">0</span>
+                        </div>
+                    </label>
+                    <div tabIndex={0} className="menu menu-compact dropdown-content mt-3 py-4 px-6 shadow bg-base-100 rounded-box w-52"> 
+                        <span className="font-bold text-lg">0 Items</span>
+                        <span className="text-orange-400">Total: $0</span>
+                        <div className="card-actions">
+                            <button className="btn-block text-white">Ver carro</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src="https://i.pinimg.com/736x/a6/9c/59/a69c597f717821ed156c44438cfbf554.jpg" />
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li>
+                            <a className="justify-between hover:text-orange-400">
+                                Profile
+                                <span className="badge">New</span>
+                            </a>
+                        </li>
+                        <li><a className='hover:text-orange-400'>Settings</a></li>
+                        <li><a className='hover:text-orange-400'>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </header>
-  )
+    )
 }
 
-export default Navbar
+export default NavBar
